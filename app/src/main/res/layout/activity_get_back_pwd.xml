@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_weight="5"
+        android:orientation="vertical">
+
+        <android.letus179.com.givemefive.ClearEditText
+            android:id="@+id/phone_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:hint="@string/register_phone_num"
+            android:inputType="number"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:textColorHint="@color/hint_color"
+            android:textSize="16sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/verification_code"
+                android:textColorHint="@color/hint_color"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:id="@+id/product_code"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/input_code"
+                android:layout_alignRight="@id/input_code"
+                android:layout_alignTop="@id/input_code"
+                android:layout_marginBottom="10dp"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/send_getBack_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:enabled="false"
+            android:text="@string/make_sure"
+            android:textColor="@color/button_text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/get_back_pwd_tip"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
