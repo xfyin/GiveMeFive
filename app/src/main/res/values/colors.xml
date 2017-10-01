@@ -9,6 +9,8 @@
     <color name="hint_color">#DEDEDE</color>
     <color name="clr_normal">#B0B0B0</color>
     <color name="clr_pressed">#4F4F4F</color>
+    <color name="tab_light_color">#00B38B</color>
+    <color name="tab_color">#AEAEAE</color>
     <!--白色 -->
     <color name="ivory">#FFFFF0</color>
     <!--象牙色 -->

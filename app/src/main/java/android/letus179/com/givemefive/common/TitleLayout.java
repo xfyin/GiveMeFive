@@ -1,6 +1,7 @@
-package android.letus179.com.givemefive;
+package android.letus179.com.givemefive.common;
 
 import android.content.Context;
+import android.letus179.com.givemefive.R;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;

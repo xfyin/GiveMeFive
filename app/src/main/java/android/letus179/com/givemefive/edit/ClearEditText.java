@@ -1,8 +1,9 @@
-package android.letus179.com.givemefive;
+package android.letus179.com.givemefive.edit;
 
 import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.letus179.com.givemefive.R;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.AppCompatEditText;
 import android.text.Editable;

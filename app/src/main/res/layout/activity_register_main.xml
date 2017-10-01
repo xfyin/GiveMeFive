@@ -56,7 +56,7 @@
 
         </LinearLayout>
 
-        <android.letus179.com.givemefive.ClearEditText
+        <android.letus179.com.givemefive.edit.ClearEditText
             android:id="@+id/pwd_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
             android:textColorHint="@color/hint_color"
             android:textSize="16sp"/>
 
-        <android.letus179.com.givemefive.ClearEditText
+        <android.letus179.com.givemefive.edit.ClearEditText
             android:id="@+id/pwd_text_again"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

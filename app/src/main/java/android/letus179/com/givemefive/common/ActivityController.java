@@ -1,4 +1,4 @@
-package android.letus179.com.givemefive;
+package android.letus179.com.givemefive.common;
 
 import android.app.Activity;
 

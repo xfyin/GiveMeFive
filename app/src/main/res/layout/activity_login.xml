@@ -12,7 +12,7 @@
         android:layout_weight="5"
         android:orientation="vertical">
 
-        <android.letus179.com.givemefive.ClearEditText
+        <android.letus179.com.givemefive.edit.ClearEditText
             android:id="@+id/login_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
             android:textColorHint="@color/hint_color"
             android:textSize="16sp"/>
 
-        <android.letus179.com.givemefive.ClearEditText
+        <android.letus179.com.givemefive.edit.ClearEditText
             android:id="@+id/login_pwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

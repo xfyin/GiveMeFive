@@ -1,11 +1,11 @@
 package android.letus179.com.givemefive.login;
 
 import android.content.Intent;
-import android.letus179.com.givemefive.BasicActivity;
-import android.letus179.com.givemefive.ClearEditText;
-import android.letus179.com.givemefive.IEditTextChangeListener;
+import android.letus179.com.givemefive.common.BasicActivity;
+import android.letus179.com.givemefive.edit.ClearEditText;
+import android.letus179.com.givemefive.edit.IEditTextChangeListener;
 import android.letus179.com.givemefive.R;
-import android.letus179.com.givemefive.TextChangeListener;
+import android.letus179.com.givemefive.edit.TextChangeListener;
 import android.letus179.com.givemefive.utils.TimeCountUtils;
 import android.os.Bundle;
 import android.support.v4.content.res.ResourcesCompat;

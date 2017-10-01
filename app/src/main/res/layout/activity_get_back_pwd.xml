@@ -19,7 +19,7 @@
         android:layout_weight="5"
         android:orientation="vertical">
 
-        <android.letus179.com.givemefive.ClearEditText
+        <android.letus179.com.givemefive.edit.ClearEditText
             android:id="@+id/phone_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

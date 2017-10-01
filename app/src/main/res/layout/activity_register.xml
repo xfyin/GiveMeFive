@@ -13,7 +13,7 @@
         android:layout_weight="5"
         android:orientation="vertical">
 
-        <android.letus179.com.givemefive.ClearEditText
+        <android.letus179.com.givemefive.edit.ClearEditText
             android:id="@+id/register_phone"
             android:layout_width="match_parent"
             android:maxLines="1"

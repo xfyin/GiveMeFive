@@ -13,7 +13,7 @@
             layout="@layout/toolbar"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:layout_gravity="top" />
+            android:layout_gravity="top"/>
 
     </FrameLayout>
 
@@ -24,5 +24,38 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu"/>
+
+
+    <RelativeLayout
+        android:layout_marginTop="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/main_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"/>
+
+        <view
+            android:id="@+id/main_tab"
+            class="android.support.v4.app.FragmentTabHost"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"/>
+
+    </RelativeLayout>
+
+    <!--上面的view也可以用下面的FragmentTabHost代替-->
+    <!--   <android.support.v4.app.FragmentTabHost
+           android:id="@+id/main_tab"
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentLeft="true" />-->
+    <!--底部导航栏我选择用FragmentTabHost+Fragment来实现-->
+    <!--（main_view）view用来显示碎片，（main_tab）tab用来放置底部按钮的数量-->
 
 </android.support.v4.widget.DrawerLayout>
