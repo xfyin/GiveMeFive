@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
-
+def getTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getDefault());
+}
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -15,6 +17,23 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //打包后应用名称
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            def fileName
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                if ('release'.equals(variant.buildType.name)) {
+                    fileName = "giveme5-RELEASE${defaultConfig.versionName}.${getTime()}.apk"
+                } else if ('debug'.equals(variant.buildType.name)) {
+                    fileName = "giveme5-DEBUG${defaultConfig.versionName}.${getTime()}.apk"
+                }
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+
         }
     }
 }
