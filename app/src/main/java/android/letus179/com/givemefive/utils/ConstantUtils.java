@@ -11,6 +11,6 @@ public class ConstantUtils {
     // 修改昵称
     public static final int MODIFY_NICK_NAME = 1;
 
-    // 修改手机号
-    public static final int MODIFY_PHONE = 2;
+    // 增加地址
+    public static final int ADD_ADDRESS = 2;
 }

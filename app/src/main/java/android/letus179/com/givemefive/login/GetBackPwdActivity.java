@@ -1,10 +1,11 @@
 package android.letus179.com.givemefive.login;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.letus179.com.givemefive.R;
 import android.letus179.com.givemefive.common.BasicActivity;
 import android.letus179.com.givemefive.edit.ClearEditText;
 import android.letus179.com.givemefive.edit.IEditTextChangeListener;
-import android.letus179.com.givemefive.R;
 import android.letus179.com.givemefive.edit.TextChangeListener;
 import android.letus179.com.givemefive.utils.CodeUtils;
 import android.os.Bundle;
@@ -38,7 +39,19 @@ public class GetBackPwdActivity extends BasicActivity implements View.OnClickLis
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setupBackAsUp("找回密码", false);
+        String title = getIntent().getStringExtra("title");
+        setupBackAsUp(title, true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GetBackPwdActivity.this, LoginActivity.class);
+                intent.putExtra("title", "登录");
+                startActivity(intent);
+                finish();
+                overridePendingTransition(R.anim.left_slide_in, R.anim.right_slide_out);
+            }
+        });
+        overridePendingTransition(R.anim.right_slide_in, R.anim.left_slide_out);
 
         phoneCodeText = (ClearEditText) findViewById(R.id.phone_code);
         inputCodeText = (EditText) findViewById(R.id.input_code);
@@ -94,6 +107,7 @@ public class GetBackPwdActivity extends BasicActivity implements View.OnClickLis
 
                 String phone = phoneCodeText.getText().toString();
                 // 判断该号码是否注册
+                // TODO: 2017/10/4  
 
 
                 break;

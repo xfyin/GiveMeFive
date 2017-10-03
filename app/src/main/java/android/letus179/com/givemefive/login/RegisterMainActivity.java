@@ -1,14 +1,15 @@
 package android.letus179.com.givemefive.login;
 
 import android.content.Intent;
+import android.letus179.com.givemefive.R;
 import android.letus179.com.givemefive.common.BasicActivity;
 import android.letus179.com.givemefive.edit.ClearEditText;
 import android.letus179.com.givemefive.edit.IEditTextChangeListener;
-import android.letus179.com.givemefive.R;
 import android.letus179.com.givemefive.edit.TextChangeListener;
 import android.letus179.com.givemefive.utils.TimeCountUtils;
 import android.os.Bundle;
 import android.support.v4.content.res.ResourcesCompat;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -29,11 +30,27 @@ public class RegisterMainActivity extends BasicActivity implements View.OnClickL
     private CheckBox agreeProtocol;
     private TextView registerProtocol;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_main);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        String title = getIntent().getStringExtra("title");
+        setupBackAsUp(title, true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterMainActivity.this, RegisterActivity.class);
+                intent.putExtra("title", "注册一下");
+                startActivity(intent);
+                finish();
+                overridePendingTransition(R.anim.left_slide_in, R.anim.right_slide_out);
+            }
+        });
+        overridePendingTransition(R.anim.right_slide_in, R.anim.left_slide_out);
+
 
         registerCodeText = (EditText) findViewById(R.id.code_text);
         obtainCodeButton = (Button) findViewById(obtain_code);
@@ -83,6 +100,7 @@ public class RegisterMainActivity extends BasicActivity implements View.OnClickL
             case R.id.register_protocol:
                 // 注册协议
                 Intent intent = new Intent(RegisterMainActivity.this, RegisterProtocolActivity.class);
+                intent.putExtra("title", "注册协议");
                 startActivity(intent);
                 break;
             default:

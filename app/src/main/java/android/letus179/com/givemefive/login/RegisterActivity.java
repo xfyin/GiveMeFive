@@ -10,6 +10,7 @@ import android.letus179.com.givemefive.edit.TextChangeListener;
 import android.letus179.com.givemefive.utils.ValidatorUtils;
 import android.os.Bundle;
 import android.support.v4.content.res.ResourcesCompat;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -26,6 +27,22 @@ public class RegisterActivity extends BasicActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        String title = getIntent().getStringExtra("title");
+        setupBackAsUp(title, true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                intent.putExtra("title", "登录");
+                startActivity(intent);
+                finish();
+                overridePendingTransition(R.anim.left_slide_in, R.anim.right_slide_out);
+            }
+        });
+        overridePendingTransition(R.anim.right_slide_in, R.anim.left_slide_out);
+
         loginText = (TextView) findViewById(R.id.login_text);
         register = (Button) findViewById(R.id.register);
         registerPhoneText = (ClearEditText) findViewById(R.id.register_phone);
@@ -34,6 +51,7 @@ public class RegisterActivity extends BasicActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                intent.putExtra("title", "登录");
                 startActivity(intent);
                 finish();
             }
@@ -53,6 +71,7 @@ public class RegisterActivity extends BasicActivity {
 
                     // 跳转
                     Intent intent = new Intent(RegisterActivity.this, RegisterMainActivity.class);
+                    intent.putExtra("title", "注册");
                     startActivity(intent);
                     finish();
                 } else {

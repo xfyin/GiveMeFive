@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MyAllActivity extends BasicActivity implements View.OnClickListener {
@@ -27,8 +26,8 @@ public class MyAllActivity extends BasicActivity implements View.OnClickListener
     // 会员级别
     private TextView myLevelView;
 
-    // 全部订单
-    private RelativeLayout myOrdersLayout;
+    // 全部订单,我的地址, 反馈意见
+    private View myOrdersLayout, myAddressLayout, mySuggestionLayout;
 
     // 待付款
     private LinearLayout myPaymentWaitLayout;
@@ -36,8 +35,6 @@ public class MyAllActivity extends BasicActivity implements View.OnClickListener
     // 待收货
     private LinearLayout myReceiveWaitLayout;
 
-    // 反馈意见
-    private RelativeLayout mySuggestionLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +46,11 @@ public class MyAllActivity extends BasicActivity implements View.OnClickListener
         myInfoView = (ImageView) findViewById(R.id.my_info);
         myNameView = (TextView) findViewById(R.id.my_name);
         myLevelView = (TextView) findViewById(R.id.my_level);
-        myOrdersLayout = (RelativeLayout) findViewById(R.id.my_orders);
+        myOrdersLayout = findViewById(R.id.my_orders);
         myPaymentWaitLayout = (LinearLayout) findViewById(R.id.my_payment_wait);
         myReceiveWaitLayout = (LinearLayout) findViewById(R.id.my_receive_wait);
-        mySuggestionLayout = (RelativeLayout) findViewById(R.id.my_suggestion);
+        myAddressLayout = findViewById(R.id.my_address);
+        mySuggestionLayout = findViewById(R.id.my_suggestion);
 
         myMessageView.setOnClickListener(this);
         mySettingView.setOnClickListener(this);
@@ -62,6 +60,7 @@ public class MyAllActivity extends BasicActivity implements View.OnClickListener
         myOrdersLayout.setOnClickListener(this);
         myPaymentWaitLayout.setOnClickListener(this);
         myReceiveWaitLayout.setOnClickListener(this);
+        myAddressLayout.setOnClickListener(this);
         mySuggestionLayout.setOnClickListener(this);
     }
 
@@ -94,10 +93,16 @@ public class MyAllActivity extends BasicActivity implements View.OnClickListener
             case R.id.my_receive_wait:
                 finish();
                 break;
+            case R.id.my_address:
+                intent = new Intent(MyAllActivity.this, MyAddressActivity.class);
+                intent.putExtra("title", "收货地址");
+                startActivity(intent);
+                break;
             case R.id.my_suggestion:
                 intent = new Intent(MyAllActivity.this, MySuggestionActivity.class);
                 intent.putExtra("title", "意见反馈");
                 startActivity(intent);
+                break;
             default:
                 break;
         }

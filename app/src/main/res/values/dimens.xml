@@ -1,4 +1,5 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="hint_size">12sp</dimen>
+    <dimen name="input_height">45dp</dimen>
 </resources>

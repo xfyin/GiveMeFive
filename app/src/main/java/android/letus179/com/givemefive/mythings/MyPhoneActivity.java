@@ -88,7 +88,7 @@ public class MyPhoneActivity extends BasicActivity implements View.OnClickListen
                 // 校验验证码
 
                 Toast.makeText(MyPhoneActivity.this, "验证码正确", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MyPhoneActivity.this, MyNewPhoneActivity.class);
+                Intent intent = new Intent(MyPhoneActivity.this, MyPhoneNewActivity.class);
                 intent.putExtra("title","换绑手机号");
                 startActivity(intent);
 

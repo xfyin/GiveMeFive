@@ -2,13 +2,15 @@ package android.letus179.com.givemefive.login;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.letus179.com.givemefive.MainActivity;
+import android.letus179.com.givemefive.R;
 import android.letus179.com.givemefive.common.BasicActivity;
 import android.letus179.com.givemefive.edit.ClearEditText;
 import android.letus179.com.givemefive.edit.IEditTextChangeListener;
-import android.letus179.com.givemefive.R;
 import android.letus179.com.givemefive.edit.TextChangeListener;
 import android.os.Bundle;
 import android.support.v4.content.res.ResourcesCompat;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.view.View;
@@ -34,11 +36,26 @@ public class LoginActivity extends BasicActivity implements View.OnClickListener
     // qq登录
     private ImageView qqLogin;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        String title = getIntent().getStringExtra("title");
+        setupBackAsUp(title, true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+                overridePendingTransition(R.anim.left_slide_in, R.anim.right_slide_out);
+            }
+        });
+        overridePendingTransition(R.anim.right_slide_in, R.anim.left_slide_out);
+
         loginNameText = (ClearEditText) findViewById(R.id.login_name);
         loginPwdText = (ClearEditText) findViewById(R.id.login_pwd);
         login = (Button) findViewById(R.id.login);
@@ -101,12 +118,14 @@ public class LoginActivity extends BasicActivity implements View.OnClickListener
             case R.id.register_text:
                 // 跳转到注册页面
                 intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                intent.putExtra("title", "注册一下");
                 startActivity(intent);
                 finish();
                 break;
             case R.id.forget_pwd:
                 // 跳转到找回密码页面
                 intent = new Intent(LoginActivity.this, GetBackPwdActivity.class);
+                intent.putExtra("title", "密码找回");
                 startActivity(intent);
                 finish();
                 break;

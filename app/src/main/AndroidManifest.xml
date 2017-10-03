@@ -46,9 +46,13 @@
         </activity>
         <activity android:name=".mythings.MyPhoneActivity">
         </activity>
-        <activity android:name=".mythings.MyNewPhoneActivity">
+        <activity android:name=".mythings.MyPhoneNewActivity">
         </activity>
         <activity android:name=".mythings.MySuggestionActivity">
+        </activity>
+        <activity android:name=".mythings.MyAddressActivity">
+        </activity>
+        <activity android:name=".mythings.MyAddressNewActivity">
         </activity>
     </application>
 

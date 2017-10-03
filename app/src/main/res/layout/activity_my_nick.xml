@@ -13,8 +13,15 @@
     <android.letus179.com.givemefive.edit.ClearEditText
         android:id="@+id/my_nick_modify"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/input_height"
+        android:layout_marginTop="20dp"
+        android:background="@null"
         android:maxLength="12"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/lightgray"/>
 
     <Button
         android:id="@+id/my_nick_modify_save"

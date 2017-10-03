@@ -3,462 +3,399 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@drawable/nav_icon"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_marginTop="10dp"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right">
-
-            <ImageView
-                android:id="@+id/my_message"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:src="@drawable/message"/>
-
-            <ImageView
-                android:id="@+id/my_setting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/my_message"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/setting"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/my_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/nav_friends"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/nav_icon"
+            android:orientation="vertical">
 
             <RelativeLayout
-                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/my_info">
+                android:layout_marginTop="10dp"
+                android:gravity="right">
 
-                <TextView
-                    android:id="@+id/my_name"
+                <ImageView
+                    android:id="@+id/my_message"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="gmf424055"
-                    android:textColor="@color/red"/>
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/message"/>
 
-                <TextView
-                    android:id="@+id/my_level"
+                <ImageView
+                    android:id="@+id/my_setting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/my_name"
-                    android:layout_marginTop="10dp"
-                    android:text="普通用户"
-                    android:textColor="@color/aqua"/>
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@id/my_message"
+                    android:src="@drawable/setting"/>
             </RelativeLayout>
 
-        </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:gravity="center">
 
+                <ImageView
+                    android:id="@+id/my_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/nav_friends"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@id/my_info">
+
+                    <TextView
+                        android:id="@+id/my_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="gmf424055"
+                        android:textColor="@color/red"/>
+
+                    <TextView
+                        android:id="@+id/my_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/my_name"
+                        android:layout_marginTop="10dp"
+                        android:text="普通用户"
+                        android:textColor="@color/aqua"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp">
+
+                <!--待付款-->
+                <LinearLayout
+                    android:id="@+id/my_payment_wait"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/home"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="待付款"/>
+                </LinearLayout>
+
+                <!--待收货-->
+                <LinearLayout
+                    android:id="@+id/my_receive_wait"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/home"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="待收货"/>
+                </LinearLayout>
+
+                <!--退货单-->
+                <LinearLayout
+                    android:id="@+id/my_return"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/home"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="退货单"/>
+                </LinearLayout>
+
+                <!--待评价-->
+                <LinearLayout
+                    android:id="@+id/my_evaluation"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/home"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="待评价"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gainsboro"/>
+
+            <!--全部订单-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/input_height">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/orders"
+                    android:drawablePadding="17dp"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:focusable="false"
+                    android:text="全部订单"
+                    android:textSize="14dp"/>
+
+                <View
+                    android:id="@+id/my_orders"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"/>
+            </FrameLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gainsboro"/>
+
+            <!--我的收藏-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/input_height">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/collection"
+                    android:drawablePadding="17dp"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:focusable="false"
+                    android:text="我的收藏"
+                    android:textSize="14dp"/>
+
+                <View
+                    android:id="@+id/my_collection"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"/>
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gainsboro"/>
+
+            <!--我的地址-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/input_height">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/address"
+                    android:drawablePadding="17dp"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:focusable="false"
+                    android:text="我的地址"
+                    android:textSize="14dp"/>
+
+                <View
+                    android:id="@+id/my_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"/>
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gainsboro"/>
+
+            <!--我的优惠券-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/input_height">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/coupon"
+                    android:drawablePadding="17dp"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:focusable="false"
+                    android:text="我的优惠券"
+                    android:textSize="14dp"/>
+
+                <View
+                    android:id="@+id/my_coupon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"/>
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gainsboro"/>
+
+            <!--会员中心-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/input_height">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/member_center"
+                    android:drawablePadding="17dp"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:focusable="false"
+                    android:text="会员中心"
+                    android:textSize="14dp"/>
+
+                <View
+                    android:id="@+id/my_member_center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"/>
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gainsboro"/>
+
+            <!--我的客服-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/input_height">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/custumer_service"
+                    android:drawablePadding="17dp"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:focusable="false"
+                    android:text="我的客服"
+                    android:textSize="14dp"/>
+
+                <View
+                    android:id="@+id/my_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"/>
+            </FrameLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gainsboro"/>
+
+            <!--意见反馈-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/input_height">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/feedback"
+                    android:drawablePadding="17dp"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:focusable="false"
+                    android:text="意见反馈"
+                    android:textSize="14dp"/>
+
+                <View
+                    android:id="@+id/my_suggestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"/>
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gainsboro"/>
+
+        </LinearLayout>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="vertical">
-
-        <!--全部订单-->
-        <RelativeLayout
-            android:id="@+id/my_orders"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
-
-            <ImageView
-                android:id="@+id/my_orders1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/orders"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
-                android:layout_toRightOf="@id/my_orders1"
-                android:gravity="center"
-                android:text="全部订单"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="right"
-                android:src="@drawable/right_arrow"/>
-        </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/gainsboro"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp">
-
-            <!--待付款-->
-            <LinearLayout
-                android:id="@+id/my_payment_wait"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:src="@drawable/home"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="待付款"/>
-            </LinearLayout>
-
-            <!--待收货-->
-            <LinearLayout
-                android:id="@+id/my_receive_wait"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:src="@drawable/home"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="待收货"/>
-            </LinearLayout>
-
-            <!--退货单-->
-            <LinearLayout
-                android:id="@+id/my_return"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:src="@drawable/home"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="退货单"/>
-            </LinearLayout>
-
-            <!--待评价-->
-            <LinearLayout
-                android:id="@+id/my_evaluation"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:src="@drawable/home"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="待评价"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/gainsboro"/>
-
-        <!--我的收藏-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
-
-            <RelativeLayout
-                android:id="@+id/my_collection"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
-
-                <ImageView
-                    android:id="@+id/my_collection1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/collection"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_toRightOf="@id/my_collection1"
-                    android:gravity="center"
-                    android:text="我的收藏"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
-                    android:layout_gravity="right"
-                    android:src="@drawable/right_arrow"/>
-            </RelativeLayout>
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/gainsboro"/>
-
-        <!--我的地址-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:id="@+id/my_address"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
-
-                <ImageView
-                    android:id="@+id/my_address1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/address"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_toRightOf="@id/my_address1"
-                    android:gravity="center"
-                    android:text="我的地址"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
-                    android:layout_gravity="right"
-                    android:src="@drawable/right_arrow"/>
-            </RelativeLayout>
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/gainsboro"/>
-
-        <!--我的优惠券-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:id="@+id/my_coupon"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
-
-                <ImageView
-                    android:id="@+id/my_coupon1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/coupon"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_toRightOf="@id/my_coupon1"
-                    android:gravity="center"
-                    android:text="我的优惠券"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
-                    android:layout_gravity="right"
-                    android:src="@drawable/right_arrow"/>
-            </RelativeLayout>
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/gainsboro"/>
-
-        <!--会员中心-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
-
-            <RelativeLayout
-                android:id="@+id/my_member_center"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
-
-                <ImageView
-                    android:id="@+id/my_member_center1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/member_center"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_toRightOf="@id/my_member_center1"
-                    android:gravity="center"
-                    android:text="会员中心"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
-                    android:layout_gravity="right"
-                    android:src="@drawable/right_arrow"/>
-            </RelativeLayout>
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/gainsboro"/>
-
-        <!--我的客服-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:id="@+id/my_service"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
-
-                <ImageView
-                    android:id="@+id/my_service1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/custumer_service"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_toRightOf="@id/my_service1"
-                    android:gravity="center"
-                    android:text="我的客服"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
-                    android:layout_gravity="right"
-                    android:src="@drawable/right_arrow"/>
-            </RelativeLayout>
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/gainsboro"/>
-
-        <!--意见反馈-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:id="@+id/my_suggestion"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
-
-                <ImageView
-                    android:id="@+id/my_suggestion1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/feedback"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_toRightOf="@id/my_suggestion1"
-                    android:gravity="center"
-                    android:text="意见反馈"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
-                    android:layout_gravity="right"
-                    android:src="@drawable/right_arrow"/>
-            </RelativeLayout>
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/gainsboro"/>
-
-    </LinearLayout>
-
-</LinearLayout>
 </ScrollView>

@@ -1,61 +1,71 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:layout_marginLeft="10dp"
-              android:layout_marginRight="10dp"
-              android:layout_marginTop="40dp"
               android:orientation="vertical">
 
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="top"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
         android:layout_weight="5"
         android:orientation="vertical">
 
         <android.letus179.com.givemefive.edit.ClearEditText
             android:id="@+id/register_phone"
             android:layout_width="match_parent"
-            android:maxLines="1"
-            android:maxLength="11"
-            android:layout_marginBottom="5dp"
+            android:layout_height="@dimen/input_height"
+            android:layout_marginLeft="5dp"
+            android:background="@null"
             android:hint="@string/input_phone_num"
             android:inputType="number"
+            android:maxLength="11"
+            android:maxLines="1"
             android:textColorHint="@color/hint_color"
-            android:textSize="16sp"
-            android:layout_height="wrap_content"/>
+            android:textSize="16sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/lightgray"/>
 
         <Button
-            android:enabled="false"
             android:id="@+id/register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:enabled="false"
             android:text="@string/register_button_text"
             android:textColor="@color/button_text"/>
 
         <LinearLayout
-            android:layout_marginLeft="5dp"
             android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:orientation="horizontal">
 
             <TextView
-                android:text="@string/login_tip"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:text="@string/login_tip"/>
 
             <TextView
                 android:id="@+id/login_text"
-                android:textColor="@color/login_tip"
-                android:text="@string/login_text"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:text="@string/login_text"
+                android:textColor="@color/login_tip"/>
 
         </LinearLayout>
     </LinearLayout>
-
-
 
 
     <include layout="@layout/other_way_login"/>

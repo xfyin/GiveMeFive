@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MyNewPhoneActivity extends BasicActivity implements View.OnClickListener {
+public class MyPhoneNewActivity extends BasicActivity implements View.OnClickListener {
 
     // 新手机号
     private ClearEditText myInfoPhoneNewText;
@@ -29,7 +29,7 @@ public class MyNewPhoneActivity extends BasicActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_new_phone);
+        setContentView(R.layout.activity_my_phone_new);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -38,7 +38,7 @@ public class MyNewPhoneActivity extends BasicActivity implements View.OnClickLis
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MyNewPhoneActivity.this, MyPhoneActivity.class);
+                Intent intent = new Intent(MyPhoneNewActivity.this, MyPhoneActivity.class);
                 intent.putExtra("title", title);
                 startActivity(intent);
                 finish();
@@ -87,10 +87,10 @@ public class MyNewPhoneActivity extends BasicActivity implements View.OnClickLis
                 //校验手机号
                 String newPhone = myInfoPhoneNewText.getText().toString();
                 if (!ValidatorUtils.isMobile(newPhone)) {
-                    Toast.makeText(MyNewPhoneActivity.this, "手机号不合法", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MyPhoneNewActivity.this, "手机号不合法", Toast.LENGTH_SHORT).show();
                     return;
                }
-                Intent intent = new Intent(MyNewPhoneActivity.this, MyInfoActivity.class);
+                Intent intent = new Intent(MyPhoneNewActivity.this, MyInfoActivity.class);
                 intent.putExtra("new_phone", newPhone.substring(0, 3) + "****" + newPhone.substring(7));
                 intent.putExtra("title", "我的资料");
                 startActivity(intent);

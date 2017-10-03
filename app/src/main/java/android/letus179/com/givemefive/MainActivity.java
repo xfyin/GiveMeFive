@@ -114,6 +114,7 @@ public class MainActivity extends BasicActivity implements TabHost.OnTabChangeLi
                             finish();
                         } else {
                             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                            intent.putExtra("title", "登录");
                             startActivity(intent);
                             finish();
                         }
