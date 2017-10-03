@@ -1,6 +1,7 @@
 package android.letus179.com.givemefive.login;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.letus179.com.givemefive.common.BasicActivity;
 import android.letus179.com.givemefive.edit.ClearEditText;
 import android.letus179.com.givemefive.edit.IEditTextChangeListener;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginActivity extends BasicActivity implements View.OnClickListener {
 
@@ -66,6 +68,12 @@ public class LoginActivity extends BasicActivity implements View.OnClickListener
         // 传入所有要监听的editText都添加进入
         textChangeListener.addAllEditText(loginNameText, loginPwdText);
 
+        SharedPreferences sp = getSharedPreferences("login", MODE_PRIVATE);
+        String loginName = sp.getString("loginName", "");
+        String loginPwd = sp.getString("loginPwd", "");
+        loginNameText.setText(loginName);
+        loginPwdText.setText(loginPwd);
+
     }
 
     @Override
@@ -80,25 +88,48 @@ public class LoginActivity extends BasicActivity implements View.OnClickListener
                     return;
                 }
                 // 登录
+                // TODO: 2017/10/2
+                Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+
+                // 存储用户名密码
+                SharedPreferences.Editor editor = getSharedPreferences("login", MODE_PRIVATE).edit();
+                editor.putString("loginName", loginNameEdit.toString());
+                editor.putString("loginPwd", loginPwdEdit.toString());
+                editor.apply();
+                finish();
                 break;
             case R.id.register_text:
                 // 跳转到注册页面
                 intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.forget_pwd:
                 // 跳转到找回密码页面
                 intent = new Intent(LoginActivity.this, GetBackPwdActivity.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.weiXin_login:
                 // 微信登录
+                finish();
                 break;
             case R.id.qq_login:
                 // qq登录
+                finish();
                 break;
             default:
                 break;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 存储用户名密码
+        SharedPreferences.Editor editor = getSharedPreferences("login", MODE_PRIVATE).edit();
+        editor.putString("loginName", loginNameText.getText() + "");
+        editor.putString("loginPwd", loginPwdText.getText() + "");
+        editor.apply();
     }
 }

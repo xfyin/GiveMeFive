@@ -9,6 +9,12 @@ import java.util.regex.Pattern;
  *
  */
 public class ValidatorUtils {
+
+    /**
+     * 验证昵称
+     */
+    public static final String REGEX_NICKNAME = "^[a-zA-Z0-9_\u4e00-\u9fa5]{0,12}$";
+
     /**
      * 正则表达式：验证用户名
      */
@@ -63,6 +69,15 @@ public class ValidatorUtils {
      * 正则表达式：验证IP地址
      */
     public static final String REGEX_IP_ADDR = "(25[0-5]|2[0-4]\\d|[0-1]\\d{2}|[1-9]?\\d)";
+
+    /**
+     * 校验昵称
+     * @param nick
+     * @return 校验通过返回true，否则返回false
+     */
+    public static boolean isNickName(String nick) {
+        return Pattern.matches(REGEX_NICKNAME, nick);
+    }
 
     /**
      * 校验用户名

@@ -1,10 +1,11 @@
 package android.letus179.com.givemefive.login;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.letus179.com.givemefive.R;
 import android.letus179.com.givemefive.common.BasicActivity;
 import android.letus179.com.givemefive.edit.ClearEditText;
 import android.letus179.com.givemefive.edit.IEditTextChangeListener;
-import android.letus179.com.givemefive.R;
 import android.letus179.com.givemefive.edit.TextChangeListener;
 import android.letus179.com.givemefive.utils.ValidatorUtils;
 import android.os.Bundle;
@@ -34,6 +35,7 @@ public class RegisterActivity extends BasicActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -47,16 +49,20 @@ public class RegisterActivity extends BasicActivity {
                 if (mobile) {
 
                     // 图形验证码
-
+                    // TODO: 2017/10/2
 
                     // 跳转
                     Intent intent = new Intent(RegisterActivity.this, RegisterMainActivity.class);
                     startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(RegisterActivity.this, "手机号码不正确", Toast.LENGTH_SHORT).show();
                 }
 
-
+                // 存储手机号
+                SharedPreferences.Editor editor = getSharedPreferences("login", MODE_PRIVATE).edit();
+                editor.putString("mobile", registerPhoneText.getText() + "");
+                editor.apply();
             }
         });
 
@@ -74,5 +80,17 @@ public class RegisterActivity extends BasicActivity {
         });
         // 传入所有要监听的editText都添加进入
         textChangeListener.addAllEditText(registerPhoneText);
+
+        SharedPreferences sp = getSharedPreferences("login", MODE_PRIVATE);
+        String mobile = sp.getString("mobile", "");
+        registerPhoneText.setText(mobile);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SharedPreferences.Editor editor = getSharedPreferences("login", MODE_PRIVATE).edit();
+        editor.putString("mobile", registerPhoneText.getText() + "");
+        editor.apply();
     }
 }

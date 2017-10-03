@@ -20,11 +20,13 @@
             android:name=".login.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".login.RegisterActivity"
@@ -35,6 +37,12 @@
         <activity android:name=".login.GetBackPwdActivity">
         </activity>
         <activity android:name=".login.RegisterProtocolActivity">
+        </activity>
+        <activity android:name=".mythings.MyAllActivity">
+        </activity>
+        <activity android:name=".mythings.MyInfoActivity">
+        </activity>
+        <activity android:name=".mythings.MyNickActivity">
         </activity>
     </application>
 

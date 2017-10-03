@@ -46,6 +46,6 @@ public class TimeCountUtils extends CountDownTimer {
     public void onFinish() {
         btn.setText("重新获取验证码");
         btn.setClickable(true);
-        btn.setBackgroundColor(ResourcesCompat.getColor(mActivity.getResources(), R.color.colorAccent, null));
+        btn.setBackgroundColor(ResourcesCompat.getColor(mActivity.getResources(), R.color.clr_normal, null));
     }
 }

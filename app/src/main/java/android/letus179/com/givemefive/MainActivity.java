@@ -1,7 +1,10 @@
 package android.letus179.com.givemefive;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.letus179.com.givemefive.common.BasicActivity;
+import android.letus179.com.givemefive.login.LoginActivity;
+import android.letus179.com.givemefive.mythings.MyAllActivity;
 import android.letus179.com.givemefive.navigation.TabDb;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
@@ -97,6 +100,27 @@ public class MainActivity extends BasicActivity implements TabHost.OnTabChangeLi
             tabSpec.setIndicator(view);
             //加入TabSpec
             mTabHost.addTab(tabSpec, TabDb.getFramgent()[i], null);
+            // 点击“我的”
+            if (i == 3) {
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // 判断是否是登录状态，若不是跳转到登录页面，否则直接展示“我的”页面
+                        boolean isLogin = true;
+                        if(isLogin) {
+                            // TODO: 2017/10/2
+                            Intent intent = new Intent(MainActivity.this, MyAllActivity.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                });
+            }
+
         }
     }
 

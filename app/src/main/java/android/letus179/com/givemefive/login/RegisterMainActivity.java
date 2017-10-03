@@ -62,6 +62,8 @@ public class RegisterMainActivity extends BasicActivity implements View.OnClickL
         // 传入所有要监听的editText都添加进入
         textChangeListener.addAllEditText(registerCodeText, pwdText, pwdTextAgain);
 
+        TimeCountUtils timeCountUtils = new TimeCountUtils(this, obtainCodeButton, 60000, 1000);
+        timeCountUtils.start();
     }
 
     @Override
