@@ -48,10 +48,11 @@
     </LinearLayout>
 
     <Button
-        android:layout_marginTop="10dp"
         android:id="@+id/my_info_phone_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:enabled="false"
         android:text="立即换绑"
         android:textColor="@color/button_text"/>
 </LinearLayout>

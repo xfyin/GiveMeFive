@@ -36,6 +36,9 @@ public class MyAllActivity extends BasicActivity implements View.OnClickListener
     // 待收货
     private LinearLayout myReceiveWaitLayout;
 
+    // 反馈意见
+    private RelativeLayout mySuggestionLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +52,7 @@ public class MyAllActivity extends BasicActivity implements View.OnClickListener
         myOrdersLayout = (RelativeLayout) findViewById(R.id.my_orders);
         myPaymentWaitLayout = (LinearLayout) findViewById(R.id.my_payment_wait);
         myReceiveWaitLayout = (LinearLayout) findViewById(R.id.my_receive_wait);
+        mySuggestionLayout = (RelativeLayout) findViewById(R.id.my_suggestion);
 
         myMessageView.setOnClickListener(this);
         mySettingView.setOnClickListener(this);
@@ -58,6 +62,7 @@ public class MyAllActivity extends BasicActivity implements View.OnClickListener
         myOrdersLayout.setOnClickListener(this);
         myPaymentWaitLayout.setOnClickListener(this);
         myReceiveWaitLayout.setOnClickListener(this);
+        mySuggestionLayout.setOnClickListener(this);
     }
 
     @Override
@@ -89,6 +94,10 @@ public class MyAllActivity extends BasicActivity implements View.OnClickListener
             case R.id.my_receive_wait:
                 finish();
                 break;
+            case R.id.my_suggestion:
+                intent = new Intent(MyAllActivity.this, MySuggestionActivity.class);
+                intent.putExtra("title", "意见反馈");
+                startActivity(intent);
             default:
                 break;
         }

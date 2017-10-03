@@ -12,14 +12,15 @@
 
     <android.letus179.com.givemefive.edit.ClearEditText
         android:id="@+id/my_nick_modify"
-        android:maxLength="12"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:maxLength="12"/>
 
     <Button
         android:id="@+id/my_nick_modify_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:enabled="false"
         android:text="保存"
         android:textColor="@color/button_text"/>
 

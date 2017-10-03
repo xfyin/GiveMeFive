@@ -8,7 +8,7 @@
     <string name="forget_pwd_tip">忘记密码？</string>
     <string name="retrieve_pwd">找回密码</string>
     <string name="third_party_account_login">第三方账户登录</string>
-    <string name="register_phone_num">请输入手机号</string>
+    <string name="input_phone_num">请输入手机号</string>
     <string name="register_button_text">注册</string>
     <string name="login_text">请登录</string>
     <string name="login_tip">已有账号？</string>
@@ -22,5 +22,11 @@
     <string name="verification_code">验证码</string>
     <string name="make_sure">确认</string>
     <string name="get_back_pwd_tip">系统会发送短信验证码到您的手机号，为了您的资金安全，请尽快查收。</string>
+
+    <string name="feedback_orders">订单问题</string>
+    <string name="feedback_others">其他问题</string>
+    <string name="feedback_question_tip">请描述您的问题...</string>
+    <string name="feedback_tip">请填写正确的手机号码，以便我们尽快联系到您。</string>
+    <string name="send_feedback">提交反馈</string>
 
 </resources>

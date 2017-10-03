@@ -48,6 +48,8 @@
         </activity>
         <activity android:name=".mythings.MyNewPhoneActivity">
         </activity>
+        <activity android:name=".mythings.MySuggestionActivity">
+        </activity>
     </application>
 
 </manifest>
