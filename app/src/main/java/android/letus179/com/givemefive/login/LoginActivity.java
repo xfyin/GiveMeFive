@@ -68,7 +68,7 @@ public class LoginActivity extends BasicActivity implements View.OnClickListener
         // 传入所有要监听的editText都添加进入
         textChangeListener.addAllEditText(loginNameText, loginPwdText);
 
-        SharedPreferences sp = getSharedPreferences("login", MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("my_operate", MODE_PRIVATE);
         String loginName = sp.getString("loginName", "");
         String loginPwd = sp.getString("loginPwd", "");
         loginNameText.setText(loginName);
@@ -92,7 +92,7 @@ public class LoginActivity extends BasicActivity implements View.OnClickListener
                 Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
 
                 // 存储用户名密码
-                SharedPreferences.Editor editor = getSharedPreferences("login", MODE_PRIVATE).edit();
+                SharedPreferences.Editor editor = getSharedPreferences("my_operate", MODE_PRIVATE).edit();
                 editor.putString("loginName", loginNameEdit.toString());
                 editor.putString("loginPwd", loginPwdEdit.toString());
                 editor.apply();
@@ -127,7 +127,7 @@ public class LoginActivity extends BasicActivity implements View.OnClickListener
     protected void onDestroy() {
         super.onDestroy();
         // 存储用户名密码
-        SharedPreferences.Editor editor = getSharedPreferences("login", MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = getSharedPreferences("my_operate", MODE_PRIVATE).edit();
         editor.putString("loginName", loginNameText.getText() + "");
         editor.putString("loginPwd", loginPwdText.getText() + "");
         editor.apply();

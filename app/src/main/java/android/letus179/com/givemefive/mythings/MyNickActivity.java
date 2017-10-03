@@ -63,7 +63,7 @@ public class MyNickActivity extends BasicActivity {
                 Intent intent = new Intent();
                 intent.putExtra("new_nick", newNick);
                 intent.putExtra("title", "我的资料");
-                setResult(0, intent);
+                setResult(RESULT_OK, intent);
                 finish();
             }
         });

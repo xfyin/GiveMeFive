@@ -60,7 +60,7 @@ public class RegisterActivity extends BasicActivity {
                 }
 
                 // 存储手机号
-                SharedPreferences.Editor editor = getSharedPreferences("login", MODE_PRIVATE).edit();
+                SharedPreferences.Editor editor = getSharedPreferences("my_operate", MODE_PRIVATE).edit();
                 editor.putString("mobile", registerPhoneText.getText() + "");
                 editor.apply();
             }
@@ -81,7 +81,7 @@ public class RegisterActivity extends BasicActivity {
         // 传入所有要监听的editText都添加进入
         textChangeListener.addAllEditText(registerPhoneText);
 
-        SharedPreferences sp = getSharedPreferences("login", MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("my_operate", MODE_PRIVATE);
         String mobile = sp.getString("mobile", "");
         registerPhoneText.setText(mobile);
     }
@@ -89,7 +89,7 @@ public class RegisterActivity extends BasicActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        SharedPreferences.Editor editor = getSharedPreferences("login", MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = getSharedPreferences("my_operate", MODE_PRIVATE).edit();
         editor.putString("mobile", registerPhoneText.getText() + "");
         editor.apply();
     }

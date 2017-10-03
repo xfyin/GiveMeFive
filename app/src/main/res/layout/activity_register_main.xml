@@ -43,7 +43,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:hint="@string/register_code"
+                android:hint="@string/code"
                 android:inputType="number"
                 android:textColorHint="@color/hint_color"
                 android:textSize="16sp"/>
@@ -52,7 +52,7 @@
                 android:id="@+id/obtain_code"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/register_code_obtain"/>
+                android:text="@string/code_obtain"/>
 
         </LinearLayout>
 

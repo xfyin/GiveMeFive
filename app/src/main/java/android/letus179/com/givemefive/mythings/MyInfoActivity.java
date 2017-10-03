@@ -4,9 +4,10 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.letus179.com.givemefive.R;
 import android.letus179.com.givemefive.common.BasicActivity;
+import android.letus179.com.givemefive.utils.ConstantUtils;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +28,10 @@ public class MyInfoActivity extends BasicActivity implements View.OnClickListene
     private RelativeLayout myInfoSexLayout;
     private TextView myInfoSex;
     private Dialog dialogSex;
+
+    //手机号
+    private RelativeLayout myInfoPhoneLayout;
+    private TextView myInfoPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +63,15 @@ public class MyInfoActivity extends BasicActivity implements View.OnClickListene
         myInfoSex = (TextView) findViewById(R.id.my_info_sex1);
         myInfoSexLayout.setOnClickListener(this);
 
+        //手机号
+        myInfoPhoneLayout = (RelativeLayout) findViewById(R.id.my_info_phone);
+        myInfoPhone = (TextView) findViewById(R.id.my_info_phone1);
+        myInfoPhoneLayout.setOnClickListener(this);
 
+        String newPhone = getIntent().getStringExtra("new_phone");
+        if (!TextUtils.isEmpty(newPhone)) {
+            myInfoPhone.setText(newPhone);
+        }
     }
 
     @Override
@@ -69,7 +82,7 @@ public class MyInfoActivity extends BasicActivity implements View.OnClickListene
                 intent = new Intent(MyInfoActivity.this, MyNickActivity.class);
                 intent.putExtra("nick", nickName.getText() + "");
                 intent.putExtra("title", "修改昵称");
-                startActivityForResult(intent, 1);
+                startActivityForResult(intent, ConstantUtils.MODIFY_NICK_NAME);
                 break;
             case R.id.my_info_sex:
                 // 弹出性别选择对话框
@@ -90,6 +103,11 @@ public class MyInfoActivity extends BasicActivity implements View.OnClickListene
                 // TODO: 2017/10/3 入库
                 dialogSex.dismiss();
                 break;
+            case R.id.my_info_phone:
+                intent = new Intent(MyInfoActivity.this, MyPhoneActivity.class);
+                intent.putExtra("title", "换绑手机号");
+                startActivity(intent);
+                break;
             default:
                 break;
         }
@@ -98,9 +116,14 @@ public class MyInfoActivity extends BasicActivity implements View.OnClickListene
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        String result = data.getExtras().getString("new_nick");//得到新Activity 关闭后返回的数据
-        Log.i("onActivityResult", result);
-        nickName.setText(result);
+        String result;
+        if (resultCode == RESULT_OK) {
+            if (requestCode == ConstantUtils.MODIFY_NICK_NAME) {
+                result = data.getExtras().getString("new_nick");
+                nickName.setText(result);
+            }
+       }
+
     }
 
 
