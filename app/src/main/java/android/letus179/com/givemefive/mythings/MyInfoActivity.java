@@ -42,10 +42,6 @@ public class MyInfoActivity extends BasicActivity implements View.OnClickListene
 
     // 我的头像
     private CircleImageView myInfoPic;
-    // 拍照
-    private TextView myInfoPicTake;
-    // 从相册选择
-    private TextView myInfoPicChoose;
     private Uri imageUri;
 
     // 昵称

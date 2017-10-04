@@ -8,6 +8,7 @@ import android.letus179.com.givemefive.common.BasicActivity;
 import android.letus179.com.givemefive.edit.ClearEditText;
 import android.letus179.com.givemefive.edit.IEditTextChangeListener;
 import android.letus179.com.givemefive.edit.TextChangeListener;
+import android.letus179.com.givemefive.entity.Address;
 import android.letus179.com.givemefive.utils.ValidatorUtils;
 import android.os.Bundle;
 import android.support.v4.content.res.ResourcesCompat;
@@ -53,7 +54,7 @@ public class MyAddressNewActivity extends BasicActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MyAddressNewActivity.this, MyAddressActivity.class);
-                intent.putExtra("title","收货地址");
+                intent.putExtra("title","收货地址管理");
                 startActivity(intent);
                 finish();
                 overridePendingTransition(R.anim.left_slide_in, R.anim.right_slide_out);
@@ -63,12 +64,23 @@ public class MyAddressNewActivity extends BasicActivity {
 
         myAddressReceiver = (ClearEditText) findViewById(R.id.my_address_receiver);
         myAddressPhone = (ClearEditText) findViewById(R.id.my_address_phone);
-        myAddressLocationChooseLayout = (View) findViewById(R.id.my_address_location_choose);
+        myAddressLocationChooseLayout = findViewById(R.id.my_address_location_choose);
         myAddressLocation = (ClearEditText) findViewById(R.id.my_address_location);
         myAddressDetail = (ClearEditText) findViewById(R.id.my_address_detail);
         myAddressSetDefault = (RadioButton) findViewById(R.id.my_address_set_default);
         myAddressSave = (Button) findViewById(R.id.my_address_save);
 
+        // 编辑收货地址
+        Address address = (Address) getIntent().getSerializableExtra("edit_address");
+        if (address != null) {
+            myAddressReceiver.setText(address.getName());
+            myAddressPhone.setText(address.getPhone());
+            myAddressLocation.setText(address.getLocation());
+            myAddressDetail.setText(address.getDetail());
+        }
+
+
+        // EditText实现不可编辑解决办法
         myAddressLocation.setKeyListener(null);
 
         // 所在地区选择
@@ -117,7 +129,11 @@ public class MyAddressNewActivity extends BasicActivity {
 
                 Toast.makeText(MyAddressNewActivity.this, "收货人：" + receiver + ", \n手机号：" + phone +
                         ", \n所在地区：" + location + ", \n详细地址：" + detail + ", \n设置默认：" + isChecked, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MyAddressNewActivity.this, MyAddressActivity.class);
+                intent.putExtra("title","收货地址");
+                startActivity(intent);
                 finish();
+                overridePendingTransition(R.anim.left_slide_in, R.anim.right_slide_out);
             }
         });
 

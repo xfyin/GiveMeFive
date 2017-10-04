@@ -97,7 +97,7 @@ public class MyAllActivity extends BasicActivity implements View.OnClickListener
                 break;
             case R.id.my_address:
                 intent = new Intent(MyAllActivity.this, MyAddressActivity.class);
-                intent.putExtra("title", "收货地址");
+                intent.putExtra("title", "收货地址管理");
                 startActivity(intent);
                 break;
             case R.id.my_suggestion:
