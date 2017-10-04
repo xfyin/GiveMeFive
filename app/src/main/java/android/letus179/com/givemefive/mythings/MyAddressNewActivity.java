@@ -53,6 +53,7 @@ public class MyAddressNewActivity extends BasicActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MyAddressNewActivity.this, MyAddressActivity.class);
+                intent.putExtra("title","收货地址");
                 startActivity(intent);
                 finish();
                 overridePendingTransition(R.anim.left_slide_in, R.anim.right_slide_out);

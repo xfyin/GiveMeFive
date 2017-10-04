@@ -16,16 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="xfyin179@163.com"
-        android:textColor="#fff"
-        android:textSize="14sp"/>
-
-    <TextView
-        android:id="@+id/mail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/username"
-        android:text="XFYIN"
+        android:text="未登录"
         android:textColor="#fff"
         android:textSize="14sp"/>
 

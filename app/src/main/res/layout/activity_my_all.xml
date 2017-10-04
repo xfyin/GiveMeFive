@@ -12,7 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@drawable/nav_icon"
+            android:background="@drawable/bg"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -43,11 +43,11 @@
                 android:layout_marginLeft="40dp"
                 android:gravity="center">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/my_info"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/nav_friends"/>
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/nav_icon"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"

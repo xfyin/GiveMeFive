@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -16,12 +17,15 @@ import static java.lang.System.exit;
 
 public class BasicActivity extends AppCompatActivity {
 
+    private static final String TAG = "BasicActivity";
+
     private long exitTime = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityController.addActivity(this);
+        Log.d(TAG, "onCreate: " + getClass().getSimpleName());
     }
 
     public void setupBackAsUp(String title, boolean titleShow) {
@@ -58,7 +62,7 @@ public class BasicActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && "MainActivity".equals(getClass().getSimpleName())) {
             if (System.currentTimeMillis() - exitTime > 2000) {
                 Toast.makeText(getApplicationContext(), "真的要离开我么~", Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();

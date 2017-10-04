@@ -75,8 +75,14 @@ public class MyPhoneNewActivity extends BasicActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
+        String newPhone = myInfoPhoneNewText.getText().toString();
         switch (v.getId()) {
             case R.id.my_info_phone_code_send1:
+                //校验手机号
+                if (!ValidatorUtils.isMobile(newPhone)) {
+                    Toast.makeText(MyPhoneNewActivity.this, "手机号不合法", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 // 发送验证码
                 TimeCountUtils timeCountUtils = new TimeCountUtils(this, myInfoPhoneCodeSend1, 60000, 1000);
                 timeCountUtils.start();
@@ -84,12 +90,6 @@ public class MyPhoneNewActivity extends BasicActivity implements View.OnClickLis
             case R.id.my_info_phone_send:
                 // TODO: 2017/10/3
                 // 校验验证码
-                //校验手机号
-                String newPhone = myInfoPhoneNewText.getText().toString();
-                if (!ValidatorUtils.isMobile(newPhone)) {
-                    Toast.makeText(MyPhoneNewActivity.this, "手机号不合法", Toast.LENGTH_SHORT).show();
-                    return;
-               }
                 Intent intent = new Intent(MyPhoneNewActivity.this, MyInfoActivity.class);
                 intent.putExtra("new_phone", newPhone.substring(0, 3) + "****" + newPhone.substring(7));
                 intent.putExtra("title", "我的资料");

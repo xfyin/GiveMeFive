@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="android.letus179.com.givemefive">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,8 +20,7 @@
         </activity>
         <activity
             android:name=".login.LoginActivity"
-            android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:launchMode="singleTask">
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN"/> -->
@@ -30,30 +31,63 @@
         </activity>
         <activity
             android:name=".login.RegisterActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:launchMode="singleTask">
         </activity>
-        <activity android:name=".login.RegisterMainActivity">
+        <activity
+            android:name=".login.RegisterMainActivity"
+            android:launchMode="singleTask">
         </activity>
-        <activity android:name=".login.GetBackPwdActivity">
+        <activity
+            android:name=".login.GetBackPwdActivity"
+            android:launchMode="singleTask">
         </activity>
-        <activity android:name=".login.RegisterProtocolActivity">
+        <activity
+            android:name=".login.RegisterProtocolActivity"
+            android:launchMode="singleTask">
         </activity>
-        <activity android:name=".mythings.MyAllActivity">
+        <activity
+            android:name=".mythings.MyAllActivity"
+            android:launchMode="singleTask">
         </activity>
-        <activity android:name=".mythings.MyInfoActivity">
+        <activity
+            android:name=".mythings.MyInfoActivity"
+            android:launchMode="singleTask">
         </activity>
-        <activity android:name=".mythings.MyNickActivity">
+        <activity
+            android:name=".mythings.MyNickActivity"
+            android:launchMode="singleTask">
         </activity>
-        <activity android:name=".mythings.MyPhoneActivity">
+        <activity
+            android:name=".mythings.MyPhoneActivity"
+            android:launchMode="singleTask">
         </activity>
-        <activity android:name=".mythings.MyPhoneNewActivity">
+        <activity
+            android:name=".mythings.MyPhoneNewActivity"
+            android:launchMode="singleTask">
         </activity>
-        <activity android:name=".mythings.MySuggestionActivity">
+        <activity
+            android:name=".mythings.MySuggestionActivity"
+            android:launchMode="singleTask">
         </activity>
-        <activity android:name=".mythings.MyAddressActivity">
+        <activity
+            android:name=".mythings.MyAddressActivity"
+            android:launchMode="singleTask">
         </activity>
-        <activity android:name=".mythings.MyAddressNewActivity">
+        <activity
+            android:name=".mythings.MyAddressNewActivity"
+            android:launchMode="singleTask">
         </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.givemefive.takephone.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <!--知道Uri的共享路径-->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
     </application>
 
 </manifest>

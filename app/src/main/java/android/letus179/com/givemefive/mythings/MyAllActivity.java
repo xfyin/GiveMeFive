@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MyAllActivity extends BasicActivity implements View.OnClickListener {
 
     // 消息
@@ -18,7 +20,7 @@ public class MyAllActivity extends BasicActivity implements View.OnClickListener
     private ImageView mySettingView;
 
     // 我的资料
-    private ImageView myInfoView;
+    private CircleImageView myInfoView;
 
     // 昵称
     private TextView myNameView;
@@ -43,7 +45,7 @@ public class MyAllActivity extends BasicActivity implements View.OnClickListener
 
         myMessageView = (ImageView) findViewById(R.id.my_message);
         mySettingView = (ImageView) findViewById(R.id.my_setting);
-        myInfoView = (ImageView) findViewById(R.id.my_info);
+        myInfoView = (CircleImageView) findViewById(R.id.my_info);
         myNameView = (TextView) findViewById(R.id.my_name);
         myLevelView = (TextView) findViewById(R.id.my_level);
         myOrdersLayout = findViewById(R.id.my_orders);

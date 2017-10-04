@@ -2,11 +2,14 @@ package android.letus179.com.givemefive;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.letus179.com.givemefive.common.BasicActivity;
 import android.letus179.com.givemefive.login.LoginActivity;
 import android.letus179.com.givemefive.mythings.MyAllActivity;
+import android.letus179.com.givemefive.mythings.MyInfoActivity;
 import android.letus179.com.givemefive.navigation.TabDb;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GravityCompat;
@@ -14,25 +17,39 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.ViewDragHelper;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
 import java.lang.reflect.Field;
 
-public class MainActivity extends BasicActivity implements TabHost.OnTabChangeListener {
+import de.hdodenhof.circleimageview.CircleImageView;
+
+public class MainActivity extends BasicActivity implements TabHost.OnTabChangeListener, View.OnClickListener {
 
     // 左滑动
     private DrawerLayout mDrawerLayout;
 
     // 底部导航
     private FragmentTabHost mTabHost;
+
+    private NavigationView navView;
+
+    // 图像
+    private CircleImageView iconImage;
+
+    // 用户名
+    private TextView username;
+
+    private boolean isLogin = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +75,17 @@ public class MainActivity extends BasicActivity implements TabHost.OnTabChangeLi
         //默认选中
         mTabHost.onTabChanged(TabDb.getTabsTxt()[0]);
 
+        navView = (NavigationView) findViewById(R.id.nav_view);
+        RelativeLayout relativeLayout = (RelativeLayout) navView.inflateHeaderView(R.layout.nav_header);
+        iconImage = (CircleImageView) relativeLayout.findViewById(R.id.icon_image);
+        username = (TextView) relativeLayout.findViewById(R.id.username);
+        iconImage.setOnClickListener(this);
+
+        SharedPreferences sp = getSharedPreferences("my_operate", MODE_PRIVATE);
+        String nickName = sp.getString("nickName", "");
+        if (isLogin && !TextUtils.isEmpty(nickName)) {
+            username.setText(nickName);
+        }
     }
 
     @Override
@@ -106,7 +134,6 @@ public class MainActivity extends BasicActivity implements TabHost.OnTabChangeLi
                     @Override
                     public void onClick(View v) {
                         // 判断是否是登录状态，若不是跳转到登录页面，否则直接展示“我的”页面
-                        boolean isLogin = true;
                         if(isLogin) {
                             // TODO: 2017/10/2
                             Intent intent = new Intent(MainActivity.this, MyAllActivity.class);
@@ -168,4 +195,24 @@ public class MainActivity extends BasicActivity implements TabHost.OnTabChangeLi
         }
     }
 
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+        switch (v.getId()) {
+            case R.id.icon_image:
+                // 判断用户是否登录，若未登录则跳转到登录页面，否则直接进入“我的资料”
+
+                if (isLogin) {
+                    // 我的资料
+                    intent = new Intent(MainActivity.this, MyInfoActivity.class);
+                    intent.putExtra("title", "我的资料");
+                    startActivity(intent);
+                } else {
+                    // 登录页面
+                    intent = new Intent(MainActivity.this, LoginActivity.class);
+                    intent.putExtra("title", "登录");
+                    startActivity(intent);
+                }
+        }
+    }
 }

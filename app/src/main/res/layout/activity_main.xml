@@ -17,15 +17,7 @@
 
     </FrameLayout>
 
-    <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_menu"/>
-
-
+    <!--主内容区的布局代码要放在侧滑菜单布局的前面,-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -57,5 +49,12 @@
            android:layout_alignParentLeft="true" />-->
     <!--底部导航栏我选择用FragmentTabHost+Fragment来实现-->
     <!--（main_view）view用来显示碎片，（main_tab）tab用来放置底部按钮的数量-->
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/nav_menu"/>
 
 </android.support.v4.widget.DrawerLayout>

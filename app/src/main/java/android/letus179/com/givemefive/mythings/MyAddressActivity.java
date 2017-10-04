@@ -3,7 +3,7 @@ package android.letus179.com.givemefive.mythings;
 import android.content.Intent;
 import android.letus179.com.givemefive.R;
 import android.letus179.com.givemefive.common.BasicActivity;
-import android.letus179.com.givemefive.utils.ConstantUtils;
+import android.letus179.com.givemefive.common.Constants;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -39,7 +39,7 @@ public class MyAddressActivity extends BasicActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MyAddressActivity.this, MyAddressNewActivity.class);
                 intent.putExtra("title", "新增地址");
-                startActivityForResult(intent, ConstantUtils.ADD_ADDRESS);
+                startActivityForResult(intent, Constants.ADD_ADDRESS);
                 finish();
             }
         });
