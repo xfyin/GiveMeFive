@@ -45,23 +45,23 @@ public class AddressAdapter extends ArrayAdapter<Address> {
         //获取当前项的实例
         final Address address = getItem(position);
         View view;
-        ViewHolder viewHolder;
+        AddressViewHolder addressViewHolder;
         // convertView 用于将之前加载好的布局进行缓存，以便重用
         if (convertView == null) {
             view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
-            viewHolder = new ViewHolder();
-            viewHolder.itemName = (TextView) view.findViewById(R.id.my_address_item_name);
-            viewHolder.itemPhone = (TextView) view.findViewById(R.id.my_address_item_phone);
-            viewHolder.itemLocationDetail = (TextView) view.findViewById(R.id.my_address_item_address);
+            addressViewHolder = new AddressViewHolder();
+            addressViewHolder.itemName = (TextView) view.findViewById(R.id.my_address_item_name);
+            addressViewHolder.itemPhone = (TextView) view.findViewById(R.id.my_address_item_phone);
+            addressViewHolder.itemLocationDetail = (TextView) view.findViewById(R.id.my_address_item_address);
             // 将viewHolder存储在view中
-            view.setTag(viewHolder);
+            view.setTag(addressViewHolder);
         } else {
             view = convertView;
-            viewHolder = (ViewHolder) view.getTag();
+            addressViewHolder = (AddressViewHolder) view.getTag();
         }
-        viewHolder.itemName.setText(address.getName());
-        viewHolder.itemPhone.setText(address.getPhone());
-        viewHolder.itemLocationDetail.setText(address.getLocation() + address.getDetail());
+        addressViewHolder.itemName.setText(address.getName());
+        addressViewHolder.itemPhone.setText(address.getPhone());
+        addressViewHolder.itemLocationDetail.setText(address.getLocation() + address.getDetail());
 
         // 编辑收货地址
         TextView myAddressEdit = (TextView) view.findViewById(R.id.my_address_edit);
@@ -95,7 +95,7 @@ public class AddressAdapter extends ArrayAdapter<Address> {
     }
 }
 
-class ViewHolder {
+class AddressViewHolder {
     // 姓名
     TextView itemName;
     // 手机号

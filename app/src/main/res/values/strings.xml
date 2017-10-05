@@ -23,6 +23,11 @@
     <string name="make_sure">确认</string>
     <string name="get_back_pwd_tip">系统会发送短信验证码到您的手机号，为了您的资金安全，请尽快查收。</string>
 
+    <string name="my_service_phone">客服热线</string>
+    <string name="my_service_online">在线客服</string>
+    <string name="my_service_weixin">微信服务</string>
+    <string name="my_service_read">购买须知</string>
+
     <string name="feedback_orders">订单问题</string>
     <string name="feedback_others">其他问题</string>
     <string name="feedback_question_tip">请描述您的问题...</string>

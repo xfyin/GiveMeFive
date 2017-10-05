@@ -28,8 +28,8 @@ public class MyAllActivity extends BasicActivity implements View.OnClickListener
     // 会员级别
     private TextView myLevelView;
 
-    // 全部订单,我的地址, 反馈意见
-    private View myOrdersLayout, myAddressLayout, mySuggestionLayout;
+    // 全部订单,我的地址, 我的客服, 反馈意见
+    private View myOrdersView, myAddressView, myServiceView, mySuggestionView;
 
     // 待付款
     private LinearLayout myPaymentWaitLayout;
@@ -48,22 +48,24 @@ public class MyAllActivity extends BasicActivity implements View.OnClickListener
         myInfoView = (CircleImageView) findViewById(R.id.my_info);
         myNameView = (TextView) findViewById(R.id.my_name);
         myLevelView = (TextView) findViewById(R.id.my_level);
-        myOrdersLayout = findViewById(R.id.my_orders);
+        myOrdersView = findViewById(R.id.my_orders);
         myPaymentWaitLayout = (LinearLayout) findViewById(R.id.my_payment_wait);
         myReceiveWaitLayout = (LinearLayout) findViewById(R.id.my_receive_wait);
-        myAddressLayout = findViewById(R.id.my_address);
-        mySuggestionLayout = findViewById(R.id.my_suggestion);
+        myAddressView = findViewById(R.id.my_address);
+        myServiceView = findViewById(R.id.my_service);
+        mySuggestionView = findViewById(R.id.my_suggestion);
 
         myMessageView.setOnClickListener(this);
         mySettingView.setOnClickListener(this);
         myInfoView.setOnClickListener(this);
         myNameView.setOnClickListener(this);
         myLevelView.setOnClickListener(this);
-        myOrdersLayout.setOnClickListener(this);
+        myOrdersView.setOnClickListener(this);
         myPaymentWaitLayout.setOnClickListener(this);
         myReceiveWaitLayout.setOnClickListener(this);
-        myAddressLayout.setOnClickListener(this);
-        mySuggestionLayout.setOnClickListener(this);
+        myAddressView.setOnClickListener(this);
+        myServiceView.setOnClickListener(this);
+        mySuggestionView.setOnClickListener(this);
     }
 
     @Override
@@ -99,6 +101,12 @@ public class MyAllActivity extends BasicActivity implements View.OnClickListener
                 intent = new Intent(MyAllActivity.this, MyAddressActivity.class);
                 intent.putExtra("title", "收货地址管理");
                 startActivity(intent);
+                break;
+            case R.id.my_service:
+                intent = new Intent(MyAllActivity.this, MyServiceActivity.class);
+                intent.putExtra("title", "我的客服");
+                startActivity(intent);
+                finish();
                 break;
             case R.id.my_suggestion:
                 intent = new Intent(MyAllActivity.this, MySuggestionActivity.class);

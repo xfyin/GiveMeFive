@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="top"/>
+
+    <!--客服热线-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@null"
+            android:drawablePadding="17dp"
+            android:drawableRight="@drawable/my_service_phone"
+            android:focusable="false"
+            android:text="@string/my_service_phone"
+            android:textSize="14dp"/>
+
+        <View
+            android:id="@+id/my_service_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"/>
+    </FrameLayout>
+
+    <!--在线客服-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@null"
+            android:drawablePadding="17dp"
+            android:drawableRight="@drawable/right_arrow"
+            android:focusable="false"
+            android:text="@string/my_service_online"
+            android:textSize="14dp"/>
+
+        <View
+            android:id="@+id/my_service_online"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"/>
+    </FrameLayout>
+
+    <!--微信管家-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@null"
+            android:drawablePadding="17dp"
+            android:drawableRight="@drawable/my_service_weixin"
+            android:focusable="false"
+            android:text="@string/my_service_weixin"
+            android:textSize="14dp"/>
+
+        <View
+            android:id="@+id/my_service_weixin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"/>
+    </FrameLayout>
+
+
+    <!--购买须知-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@null"
+            android:drawablePadding="17dp"
+            android:drawableRight="@drawable/right_arrow"
+            android:focusable="false"
+            android:text="@string/my_service_read"
+            android:textSize="14dp"/>
+
+        <View
+            android:id="@+id/my_service_read"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"/>
+    </FrameLayout>
+</LinearLayout>

@@ -3,6 +3,7 @@
           package="android.letus179.com.givemefive">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <application
         android:allowBackup="true"
@@ -83,11 +84,15 @@
             android:authorities="com.givemefive.takephone.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
-            <!--知道Uri的共享路径-->
+
+            <!-- 知道Uri的共享路径 -->
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths"/>
         </provider>
+
+        <activity android:name=".mythings.MyServiceActivity">
+        </activity>
     </application>
 
 </manifest>
